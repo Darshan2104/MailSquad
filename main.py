@@ -3,8 +3,9 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 load_dotenv()
 
-GROQ_API = os.getenv('GROQ_API')
-TAVILY_API = os.getenv('TAVILY_API')
+from agents import EmailCategorizerAgent
+GROQ_API = os.getenv('GROQ_API_KEY')
+TAVILY_API = os.getenv('TAVILY_API_KEY')
 
 os.environ["GROQ_API_KEY"] = GROQ_API
 os.environ["TAVILY_API_KEY"] = TAVILY_API
@@ -23,7 +24,7 @@ from utils import write_markdown_file
 def main():
     # 1. Initialize Agents:
     email_categorizer = EmailCategorizerAgent(GROQ_LLM)
-    research_router = ResearchRouterAgent(GROQ_LLM)
+    # research_router = ResearchRouterAgent(GROQ_LLM)
     # ... Initialize other agents ...
 
     # 2. Process Email:
@@ -32,7 +33,7 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    from agents import EmailCategorizerAgent
+    
     EMAIL = """HI there, \n
         I am emailing to say that I had a wonderful stay at your resort last week. \n
 
