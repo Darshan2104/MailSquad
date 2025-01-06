@@ -1,13 +1,11 @@
-# MailSquad: Email Automation with AgentSquad
-
-## Overview
-
-**MailSquad** is an advanced email automation tool that leverages the power of **LangGraph**  and **LLM Agents** to create customizable, graph-based workflows for handling email-related tasks. This project is designed to help users automate tasks such as categorizing emails, researching information, drafting email content, and more.
+# MailSquad
+- Email-automation
 
 
-### File Structure
+## File Structure
 
-```
+'''
+
 langgraph-project/
 ├── README.md                 # Project overview and setup instructions
 ├── requirements.txt          # Dependencies for the project
@@ -39,7 +37,8 @@ langgraph-project/
     ├── langgraph_config.yaml # Pipeline-specific configurations
     ├── agent_config.yaml     # Configuration for agents
 
-```
+
+'''
 
 ### LangGraph Pipeline:
 - Define State
@@ -62,7 +61,6 @@ langgraph-project/
 7. state_printer
 
 
-### TODO: 
+- TODO: 
 - For each task, instead of calling LLM, Make it configurable!
     - For example, for categorization, instead of using LLM, I should be able to use any classical ML model!
-- Add RAG for information retirval along with option of internet search
