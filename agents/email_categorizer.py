@@ -10,18 +10,18 @@ class EmailCategorizerAgent(BaseAgent):
 
             <|eot_id|><|start_header_id|>user<|end_header_id|>
             Conduct a comprehensive analysis of the email provided and categorize into one of the following categories:
-                price_equiry - used when someone is asking for information about pricing \
-                customer_complaint - used when someone is complaining about something \
-                product_enquiry - used when someone is asking for information about a product feature, benefit or service but not about pricing \\
-                customer_feedback - used when someone is giving feedback about a product \
-                off_topic when it doesnt relate to any other category \
+            price_equiry - used when someone is asking for information about pricing
+            customer_complaint - used when someone is complaining about something
+            product_enquiry - used when someone is asking for information about a product feature, benefit or service but not about pricing
+            customer_feedback - used when someone is giving feedback about a product
+            off_topic when it doesnt relate to any other category
 
 
-                    Output a single cetgory only from the types ('price_equiry', 'customer_complaint', 'product_enquiry', 'customer_feedback', 'off_topic') \
-                    eg:
-                    'price_enquiry' \
+            Output a single cetgory only from the types ('price_equiry', 'customer_complaint', 'product_enquiry', 'customer_feedback', 'off_topic')
+            eg:
+            'price_equiry'
 
-            EMAIL CONTENT:\n\n {initial_email} \n\n
+            EMAIL CONTENT:\n {initial_email} \n
             <|eot_id|>
             <|start_header_id|>assistant<|end_header_id|>
             """,

@@ -1,3 +1,6 @@
 __pycache__/
 .env
 agents/__pycache__/
+.vscode/
+.refact/
+my_venv/

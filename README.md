@@ -1,66 +1,64 @@
 # MailSquad
-- Email-automation
+**Email automation using LangGraph, LangChain, and ToolUse**
 
+## 🚀 Overview
+MailSquad is a smart email automation tool that processes incoming emails, categorizes them, researches relevant information, and drafts professional replies — all powered by LangGraph, LangChain, and ToolUse.
 
-## File Structure
+## 📨 Reply to a Customer Email
 
-'''
+1. **Receive the email**
+2. **Categorize** the email as one of the following:
+   - Sales
+   - Custom Enquiry
+   - Off-topic
+   - Customer Complaint
+3. **Generate keywords** using the category and initial email for research
+4. **Draft a reply**
+5. **Analyze** the draft reply
+6. **Rewrite** if necessary
 
-langgraph-project/
-├── README.md                 # Project overview and setup instructions
-├── requirements.txt          # Dependencies for the project
-├── .env                      # Environment variables (optional)
-├── src/                      # Main source code
-│   ├── __init__.py
-│   ├── agents/               # Custom agents and workflows
-│   │   ├── __init__.py
-│   │   ├── base_agent.py     # Base agent implementation
-│   │   ├── conversational_agent.py  # Example agent
-│   └── pipelines/            # Graph-based pipelines and utilities
-│       ├── __init__.py
-│       ├── langgraph_pipeline.py    # Main LangGraph pipeline logic
-│   ├── tools/                # Custom tools for the agents
-│       ├── __init__.py
-│       ├── search_tool.py    # Example: Search functionality
-│       ├── math_tool.py      # Example: Mathematical utilities
-│   ├── utils/                # Helper functions
-│       ├── __init__.py
-│       ├── logger.py         # Logging utilities
-│       ├── config_loader.py  # Configuration management
-│   ├── app.py                # Main entry point for running the project
-├── tests/                    # Unit and integration tests
-│   ├── __init__.py
-│   ├── test_agents.py        # Test cases for agents
-│   ├── test_pipeline.py      # Test cases for LangGraph pipelines
-│   ├── test_tools.py         # Test cases for tools
-└── configs/                  # Configuration files
-    ├── langgraph_config.yaml # Pipeline-specific configurations
-    ├── agent_config.yaml     # Configuration for agents
+---
 
+## 🧠 LangGraph Pipeline
 
-'''
+### Define:
+- **State**
+- **Nodes**
+- **Conditional Edges**
 
-### LangGraph Pipeline:
-- Define State
-- Define Nodes
-- Define Conditional Edges
+---
 
--> Build Graph
-    - Add nodes
-    - Add edges
-    - Compile workflow
-    - Boom! it is ready to invoke!
+### 🧩 Nodes
 
-### Nodes
-1. categorize_email
-2. research_info_search
-3. draft_email_writer
-4. analyze_draft_email
-5. rewrite_email
-6. no_rewrite
-7. state_printer
+1. `categorize_email` - Classifies the email into a predefined category.
+2. `research_info_search` - Searches for relevant information based on the category and email content.
+3. `draft_email_writer` - Drafts a reply using the email content and research info.
+4. `analyze_draft_email` - Evaluates the quality and relevance of the draft.
+5. `rewrite_email` - Improves the draft if needed.
+6. `no_rewrite` - Skips rewriting if the draft is acceptable.
+7. `state_printer` - (Optional) Logs the state at any point in the workflow.
 
+---
 
-- TODO: 
-- For each task, instead of calling LLM, Make it configurable!
-    - For example, for categorization, instead of using LLM, I should be able to use any classical ML model!
+## 🛠️ Build the Graph
+
+1. **Add Nodes**
+2. **Add Edges**
+3. **Compile Workflow**
+4. ✅ Boom! Ready to invoke!
+
+---
+
+## 🧪 Example Use Case
+Incoming customer queries get automatically processed, categorized, researched, and responded to — saving hours of manual work and ensuring consistency in tone and accuracy.
+
+---
+
+## 📦 Tech Stack
+- [LangGraph](https://github.com/langchain-ai/langgraph)
+- [LangChain](https://www.langchain.com/)
+- [ToolUse](https://app.tavily.com/)
+
+---
+
+> Automate replies. Accelerate engagement.

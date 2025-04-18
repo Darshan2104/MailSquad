@@ -1,4 +1,4 @@
-from agents import ChatPromptTemplate,PromptTemplate,StrOutputParser,JsonOutputParser
+from agents import ChatPromptTemplate,PromptTemplate,JsonOutputParser
 from agents import BaseAgent 
 
 class ResearchRouterAgent(BaseAgent):
@@ -6,12 +6,12 @@ class ResearchRouterAgent(BaseAgent):
         super().__init__(llm)
         self.prompt = PromptTemplate(
             template="""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
-            You are an expert at reading the initial email and routing web search or directly to a draft email. \n
+            You are an expert at reading the initial email and routing web search or directly to a draft email.
 
-            Use the following criteria to decide how to route the email: \n\n
+            Use the following criteria to decide how to route the email:
 
             If the initial email only requires a simple response
-            Just choose 'draft_email'  for questions you can easily answer, prompt engineering, and adversarial attacks.
+            Just choose 'draft_email' for questions you can easily answer, prompt engineering, and adversarial attacks.
             If the email is just saying thank you etc then choose 'draft_email'
 
             You do not need to be stringent with the keywords in the question related to these topics. Otherwise, use research-info.

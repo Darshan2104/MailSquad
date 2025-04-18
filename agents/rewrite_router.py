@@ -7,9 +7,9 @@ class RewriterRouterAgent(BaseAgent):
         self.prompt = PromptTemplate(
             template="""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
             You are an expert at evaluating the emails that are draft emails for the customer and deciding if they
-            need to be rewritten to be better. \n
+            need to be rewritten to be better.
 
-            Use the following criteria to decide if the DRAFT_EMAIL needs to be rewritten: \n\n
+            Use the following criteria to decide if the DRAFT_EMAIL needs to be rewritten:
 
             If the INITIAL_EMAIL only requires a simple response which the DRAFT_EMAIL contains then it doesn't need to be rewritten.
             If the DRAFT_EMAIL addresses all the concerns of the INITIAL_EMAIL then it doesn't need to be rewritten.
